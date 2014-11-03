@@ -15,7 +15,8 @@ app.get('/*', cors(), function(req, res){
 
   console.log(url)
   request.get({url:url, json:true}, function(err, resp, body) {
-    res.jsonp(body);
+    res.type('text/plain');
+    res.send(body);
   });
 });
 
